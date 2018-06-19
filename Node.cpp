@@ -14,28 +14,16 @@ std::string Node::toString(){
 	return "This is a Node " + this -> name;
 }
 
-void Node::setLeft(Node* n){
-	this -> edges[3] = n;
-}
-void Node::setRight(Node* n){
-	this -> edges[1] = n;
-}
-void Node::setUp(Node* n){
-	this -> edges[0] = n;
-}
-void Node::setDown(Node* n){
-	this -> edges[2] = n;
-}
 
-Node* Node::getLeft(){
-	return this -> edges[3];
+void Node::setNode(int direction, Node* n){
+	this -> edges[direction] = n;
 }
-Node* Node::getRight(){
-	return this -> edges[1];
+Node* Node::getNode(int direction){
+	return this -> edges[direction];
 }
-Node* Node::getUp(){
-	return this -> edges[0];
+void Node::setRelationship(int direction, std::string status){
+	this -> relationships[direction] = status;
 }
-Node* Node::getDown(){
-	return this -> edges[2];
+std::string Node::getRelationship(int direction){
+	return this -> relationships[direction];
 }
